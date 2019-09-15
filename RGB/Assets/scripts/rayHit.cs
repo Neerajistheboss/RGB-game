@@ -86,12 +86,19 @@ public class rayHit : MonoBehaviour
 
 
 
-            if (gameOver)
+            if (gameOver&&Time.timeScale!=0)
             {
+                
+                pausePannel.SetActive(true);
+                pausePannel.SetActive(true);
+                PlayerPrefs.SetInt("goCount",PlayerPrefs.GetInt("goCount")+1);
+                if(PlayerPrefs.GetInt("goCount")>0&&PlayerPrefs.GetInt("goCount")%3==0)
+                {
+                adsController.showAd = true;
+                PlayerPrefs.SetInt("goCount", 0);
+                }
                 Time.timeScale = 0f;
-                pausePannel.SetActive(true);
-                pausePannel.SetActive(true);
-            }
+        }
         }
     }
 

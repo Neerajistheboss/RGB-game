@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     [SerializeField] Text score;
-    float time = 0f;
+    public static float time = 0f;
     // Start is called before the first frame update
     void Start()
     {
